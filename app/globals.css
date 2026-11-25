@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  /* base */
+  --color-fundo: #eaebe9;
+  --color-azul-escuro: #152638;
+  --color-verde-claro: #2BBAA2;
+  
+  --color-texto-claro: #ffffff;
+  --color-texto-escuro: #152638;
+
+  /* cursos */
+  --color-abi: #E35205;
+  --color-cc: #00A991;
+  --color-ia: #00A6C7;
+  --color-licenciatura: #6A00C7;
+
+  /* fonte */
+  --font-sans: var(--font-poppins), system-ui, sans-serif;
+}
+
+body {
+  background: var(--color-fundo);
+  color: var(--color-texto);
+}
