@@ -1,3 +1,10 @@
+import ContatoSetores from '@/components/sobre/ContatoSetores';
+
 export default function Contato() {
-  return <h1>Contato</h1>
+  return (
+    <main>
+      <h1>Contatoss</h1>
+      <ContatoSetores/>
+    </main>
+  )
 }
