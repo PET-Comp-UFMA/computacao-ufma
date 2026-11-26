@@ -19,7 +19,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR" className={poppins.variable}>
       <body className="font-sans">
-        <Header />
+        <Header
+       menuAtivo="inicio"
+        />
         {children}
         <Footer />
       </body>
