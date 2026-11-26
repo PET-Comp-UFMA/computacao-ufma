@@ -1,3 +1,4 @@
+import Coordenacao from '@/components/home/Coordenacao'
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
 import PageBanner from '@/components/layout/PageBanner'
@@ -12,6 +13,7 @@ export default function Inicio() {
         titulo="Computação"
         tamanho="grande"
       />
+      <Coordenacao />
       <Footer />
     </main>
   )
