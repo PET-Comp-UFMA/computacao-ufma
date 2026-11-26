@@ -1,14 +1,11 @@
 import Breadcrumb from '@/components/layout/Breadcrumb'
 import PageBanner from '@/components/layout/PageBanner'
-import Footer from '@/components/layout/Footer'
-import Header from '@/components/layout/Header'
-import { Card } from "@/components/sobre/card";
+import { Card } from "@/components/sobre/equipe/card";
 
 
 export default function Equipe() {
   return( 
     <main>
-      <Header/>
       <PageBanner
         imagem="/images/foto_porta_ccet.png"
         titulo="Equipe"
@@ -57,7 +54,6 @@ export default function Equipe() {
       </div>
       </div>
     </section>
-    <Footer/>
     </main>
   
 
