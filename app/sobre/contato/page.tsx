@@ -1,3 +1,22 @@
+import Breadcrumb from '@/components/layout/Breadcrumb'
+import PageBanner from '@/components/layout/PageBanner'
+
 export default function Contato() {
-  return <h1>Contato</h1>
+  return (
+    <main>
+      <PageBanner
+        imagem="/images/foto_porta_ccet.png"
+        titulo="Contatos"
+        subtitulo="Fale conosco por meio destes contatos."
+      >
+        <Breadcrumb
+          itens={[
+            { nome: 'Início', href: '/' },
+            { nome: 'Sobre' },
+            { nome: 'Contatos' },
+          ]}
+        />
+      </PageBanner>
+    </main>
+  )
 }
