@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { useRef, useState } from 'react'
 import { criarOpcoesFiltros, filtrosIniciais, type Publicacao } from './dados'
 import PublicacaoCard from './PublicacaoCard'
@@ -42,32 +41,32 @@ export default function PublicacoesLista({ publicacoes }: { publicacoes: Publica
   }
 
   return (
-    <>
-      <div className={'publicacoes-barra'}>
-        <div className={'publicacoes-buscaPrincipal'} role="search">
-          <Image src="/images/publicacoes/busca.svg" alt="" width={300} height={28} aria-hidden="true" />
+    <div className="font-light">
+      <div className="flex min-h-[50px] items-center justify-center gap-[19px] px-5 py-[11px] shadow-md max-[1250px]:flex-wrap max-[760px]:gap-4 max-[760px]:py-4">
+        <div className="relative h-7 w-[300px] flex-[0_1_300px] rounded-[5px] bg-texto-claro" role="search">
+          <svg className="pointer-events-none absolute left-2 top-1.5 size-4 text-texto-escuro/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true"><circle cx="10" cy="10" r="6" /><path d="m15 15 5 5" /></svg>
           <label htmlFor="buscar-publicacoes" className="sr-only">Buscar publicações</label>
-          <input ref={buscaRef} id="buscar-publicacoes" type="search" value={busca} onChange={event => setBusca(event.target.value)} />
-          {busca && <button type="button" className={'publicacoes-limparBusca'} aria-label="Limpar busca" onClick={() => { setBusca(''); buscaRef.current?.focus() }}>×</button>}
+          <input className="relative h-7 w-full rounded-[5px] bg-transparent px-7 text-xs focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-azul-escuro [&::-webkit-search-cancel-button]:hidden" ref={buscaRef} id="buscar-publicacoes" type="search" value={busca} onChange={event => setBusca(event.target.value)} />
+          {busca && <button type="button" className="absolute right-[3px] top-0 h-7 w-[25px] text-xl text-texto-escuro cursor-pointer disabled:cursor-not-allowed enabled:hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-azul-escuro" aria-label="Limpar busca" onClick={() => { setBusca(''); buscaRef.current?.focus() }}>×</button>}
         </div>
-        <div className={'publicacoes-cursos'} role="group" aria-label="Filtrar por curso">
+        <div className="flex flex-wrap items-center gap-[19px] max-[760px]:justify-center max-[760px]:gap-2.5" role="group" aria-label="Filtrar por curso">
           {cursosPrincipais.map(item => (
-            <button key={item.valor} type="button" className={'publicacoes-curso'} aria-pressed={curso === item.valor} onClick={() => setCurso(item.valor)}>{item.nome}</button>
+            <button key={item.valor} type="button" className="shrink-0 rounded-[5px] bg-verde-claro/50 px-[25px] py-1.5 text-xs leading-3 font-normal text-texto-escuro aria-pressed:min-h-7 aria-pressed:bg-verde-claro aria-pressed:font-medium max-[760px]:min-h-8 max-[760px]:px-4 cursor-pointer disabled:cursor-not-allowed enabled:hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-azul-escuro" aria-pressed={curso === item.valor} onClick={() => setCurso(item.valor)}>{item.nome}</button>
           ))}
         </div>
       </div>
-      <div className={'publicacoes-conteudo'}>
+      <div className="mx-auto grid max-w-[1440px] grid-cols-[325px_minmax(0,1fr)] items-start gap-[57px] pt-[49px] pr-11 pb-16 pl-[69px] max-[1250px]:grid-cols-[290px_minmax(0,1fr)] max-[1250px]:gap-8 max-[1250px]:px-8 max-[760px]:grid-cols-1 max-[760px]:px-5 max-[760px]:pt-8 max-[760px]:pb-12">
         <PublicacoesFiltros opcoes={opcoesFiltros} filtros={rascunho} onChange={setRascunho} onApply={() => setAplicados(rascunho)} />
-        <section className={'publicacoes-resultados'} aria-label="Lista de publicações">
-          <div className={'publicacoes-resultadosCabecalho'}>
-            <p role="status"><strong>{resultados.length}</strong> {resultados.length === 1 ? 'resultado encontrado' : 'resultados encontrados'}</p>
+        <section className="min-w-0" aria-label="Lista de publicações">
+          <div className="flex text-xs leading-[18px]">
+            <p role="status"><strong className="font-semibold">{resultados.length}</strong> {resultados.length === 1 ? 'resultado encontrado' : 'resultados encontrados'}</p>
           </div>
-          <div className={'publicacoes-lista'}>
+          <div className="mt-[59px] max-[760px]:mt-7">
             {resultados.map(item => <PublicacaoCard key={item.id} publicacao={item} />)}
-            {!resultados.length && <div className={'publicacoes-vazio'}><h2>Nenhuma publicação encontrada</h2><p>Tente outra palavra-chave ou remova os filtros.</p><button type="button" className={'publicacoes-aplicar'} onClick={limparFiltros}>Limpar filtros</button></div>}
+            {!resultados.length && <div className="py-[30px]"><h2 className="text-xl font-semibold">Nenhuma publicação encontrada</h2><p className="mt-3">Tente outra palavra-chave ou remova os filtros.</p><button type="button" className="mt-7 ml-px flex min-h-8 w-auto items-center justify-center rounded-[5px] bg-verde-claro px-3 py-1.5 text-xs leading-5 font-semibold text-texto-escuro max-[760px]:min-h-10 cursor-pointer disabled:cursor-not-allowed enabled:hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-azul-escuro" onClick={limparFiltros}>Limpar filtros</button></div>}
           </div>
         </section>
       </div>
-    </>
+    </div>
   )
 }
