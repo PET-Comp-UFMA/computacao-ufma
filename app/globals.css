@@ -5,6 +5,7 @@
   --color-fundo: #eaebe9;
   --color-azul-escuro: #152638;
   --color-verde-claro: #2BBAA2;
+  --color-verde-escuro: #1a6264;
   
   --color-texto-claro: #ffffff;
   --color-texto-escuro: #152638;
@@ -21,5 +22,5 @@
 
 body {
   background: var(--color-fundo);
-  color: var(--color-texto);
+  color: var(--color-texto-escuro);
 }
