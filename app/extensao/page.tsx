@@ -1,29 +1,34 @@
 import CargaHorariaCard from '@/components/extensao/CargaHorariaCard';
 import EntendaExtensaoCard from '@/components/extensao/EntendaExtensaoCard';
-import Breadcrumb from '@/components/layout/Breadcrumb'
-import PageBanner from '@/components/layout/PageBanner'
+import Breadcrumb from '@/components/layout/Breadcrumb';
+import PageBanner from '@/components/layout/PageBanner';
 import OportunidadeCard from '@/components/extensao/OportunidadeCard';
 
 export default function Extensao() {
   return (
     <main className="min-h-screen bg-fundo font-sans text-texto-escuro">
+      <div className="relative">
+        <PageBanner
+          imagem="/images/foto_entrada_ccet.png"
+          titulo="Extensão"
+          subtitulo="Projetos que levam o conhecimento da Computação para além da sala de aula e aproximam a universidade da comunidade"
+        >
+          <Breadcrumb
+            itens={[
+              { nome: 'Início', href: '/' },
+              { nome: 'Extensão' },
+            ]}
+          />
+        </PageBanner>
 
-      <PageBanner
-        imagem="/images/foto_entrada_ccet.png"
-        titulo="Extensão"
-        subtitulo="Projetos que levam o conhecimento da Computação para além da sala de aula e aproximam a universidade da comunidade"
-      >
-        <Breadcrumb
-          itens={[
-            { nome: 'Início', href: '/' },
-            { nome: 'Extensão' },
-          ]}
-        />
-      </PageBanner>
-      
+        <div className="pointer-events-none bg-azul-escuro px-6 pb-8 md:absolute md:inset-0 md:mx-auto md:flex md:max-w-6xl md:items-center md:justify-end md:bg-transparent md:py-0">
+          <div className="pointer-events-auto">
+            <CargaHorariaCard />
+          </div>
+        </div>
+      </div>
+
       <div className="mx-auto max-w-6xl px-6 py-12">
-        <CargaHorariaCard />
-
         <section className="py-12">
           <div>
             <div className="mb-3 h-1 w-16 rounded-full bg-verde-claro" />
@@ -31,12 +36,12 @@ export default function Extensao() {
               Entenda a extensão
             </h2>
             <p className="mt-2 text-sm text-texto-escuro md:text-base">
-              O essencial para participar, registrar e aproveitar suas horas.
+              O esencial para participai, registrar e aproveitar suas horas.
             </p>
           </div>
 
           <div className="mt-8 grid gap-6 md:grid-cols-3">
-            <EntendaExtensaoCard 
+            <EntendaExtensaoCard
               iconeSrc="/icons/livro.svg"
               iconeAlt="Ícone de um livro aberto"
               titulo="O que é extensão?"
@@ -52,7 +57,7 @@ export default function Extensao() {
             <EntendaExtensaoCard
               iconeSrc="/icons/lista.svg"
               iconeAlt="Ícone de prancheta com lista"
-              titulo="Quais atividades contam?"
+              titulo="Quais atividade contam?"
             >
               A carga horária pode ser obtida em programas como PET e PIBITI,
               projetos de extensão e de PAD+, atividades das Ligas Acadêmicas,
@@ -97,7 +102,7 @@ export default function Extensao() {
               logoAlt="Logo do Programa de Educação Tutorial (PETComp)"
               categoria="Programa"
               titulo="PETComp"
-              subtitulo="Programa de Educação Tutorial" 
+              subtitulo="Programa de Educação Tutorial"
             >
               Desenvolve ações de ensino, pesquisa e extensão, contribuindo para a formação acadêmica no curso.
             </OportunidadeCard>
@@ -117,7 +122,7 @@ export default function Extensao() {
               logoAlt="Logo do Diretório Acadêmico de Computação (DAComp)"
               categoria="Associação"
               titulo="DAComp"
-              subtitulo="Diretório Acadêmico de Computação"   
+              subtitulo="Diretório Acadêmico de Computação"
             >
               Representa o corpo discente, defende os interesses dos estudantes e promove iniciativas no curso.
             </OportunidadeCard>
@@ -126,3 +131,4 @@ export default function Extensao() {
       </div>
     </main>
   );
+}
