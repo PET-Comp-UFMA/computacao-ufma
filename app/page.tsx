@@ -1,3 +1,3 @@
 export default function Inicio() {
-  return <h1>Página Inicial</h1>
+  return <h1>Página Iicial</h1>
 }
