@@ -1,10 +1,26 @@
 import CargaHorariaCard from '@/components/extensao/CargaHorariaCard';
 import EntendaExtensaoCard from '@/components/extensao/EntendaExtensaoCard';
+import Breadcrumb from '@/components/layout/Breadcrumb'
+import PageBanner from '@/components/layout/PageBanner'
 import OportunidadeCard from '@/components/extensao/OportunidadeCard';
 
 export default function Extensao() {
   return (
     <main className="min-h-screen bg-fundo font-sans text-texto-escuro">
+
+      <PageBanner
+        imagem="/images/foto_entrada_ccet.png"
+        titulo="Extensão"
+        subtitulo="Projetos que levam o conhecimento da Computação para além da sala de aula e aproximam a universidade da comunidade"
+      >
+        <Breadcrumb
+          itens={[
+            { nome: 'Início', href: '/' },
+            { nome: 'Extensão' },
+          ]}
+        />
+      </PageBanner>
+      
       <div className="mx-auto max-w-6xl px-6 py-12">
         <CargaHorariaCard />
 
@@ -110,4 +126,3 @@ export default function Extensao() {
       </div>
     </main>
   );
-}
