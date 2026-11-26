@@ -2,6 +2,7 @@ import Text_Image from "../../../components/sobre/historia/Text_image";
 import Texto_Simples from "../../../components/sobre/historia/Simple_text";  
 import Breadcrumb from '@/components/layout/Breadcrumb'
 import PageBanner from '@/components/layout/PageBanner'
+import { NossasFormacoes } from '@/components/sobre/historia/NossasFormacoes'
 
 export default function Historia() {
   return (
@@ -31,6 +32,7 @@ export default function Historia() {
                   imagem={{fonte:'/images/ccet_totem.jpg',alt:'Foto do CCET',tamanho: 200, largura: 300}}
       />
     </div>
+    <NossasFormacoes />
     </main>
   )
 }
