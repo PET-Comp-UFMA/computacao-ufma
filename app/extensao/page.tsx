@@ -6,27 +6,23 @@ import OportunidadeCard from '@/components/extensao/OportunidadeCard';
 
 export default function Extensao() {
   return (
-    <main className="min-h-screen bg-fundo font-sans text-texto-escuro">
-      <div className="relative">
-        <PageBanner
-          imagem="/images/foto_entrada_ccet.png"
-          titulo="Extensão"
-          subtitulo="Projetos que levam o conhecimento da Computação para além da sala de aula e aproximam a universidade da comunidade"
-        >
-          <Breadcrumb
-            itens={[
-              { nome: 'Início', href: '/' },
-              { nome: 'Extensão' },
-            ]}
-          />
-        </PageBanner>
+    <main>
+      <PageBanner
+        imagem="/images/foto_entrada_ccet.png"
+        titulo="Extensão"
+        subtitulo="Projetos que levam o conhecimento da Computação para além da sala de aula e aproximam a universidade da comunidade"
+      >
+        <Breadcrumb
+          itens={[
+            { nome: 'Início', href: '/' },
+            { nome: 'Extensão' },
+          ]}
+        />
 
-        <div className="pointer-events-none bg-azul-escuro px-6 pb-8 md:absolute md:inset-0 md:mx-auto md:flex md:max-w-6xl md:items-center md:justify-end md:bg-transparent md:py-0">
-          <div className="pointer-events-auto">
-            <CargaHorariaCard />
-          </div>
+        <div className="lg:absolute lg:top-1/2 lg:right-16 lg:-translate-y-1/2">
+          <CargaHorariaCard />
         </div>
-      </div>
+      </PageBanner>
 
       <div className="mx-auto max-w-6xl px-6 py-12">
         <section className="py-12">
@@ -36,7 +32,7 @@ export default function Extensao() {
               Entenda a extensão
             </h2>
             <p className="mt-2 text-sm text-texto-escuro md:text-base">
-              O esencial para participai, registrar e aproveitar suas horas.
+              O essencial para participar, registrar e aproveitar suas horas.
             </p>
           </div>
 
@@ -57,7 +53,7 @@ export default function Extensao() {
             <EntendaExtensaoCard
               iconeSrc="/icons/lista.svg"
               iconeAlt="Ícone de prancheta com lista"
-              titulo="Quais atividade contam?"
+              titulo="Quais atividades contam?"
             >
               A carga horária pode ser obtida em programas como PET e PIBITI,
               projetos de extensão e de PAD+, atividades das Ligas Acadêmicas,
@@ -89,7 +85,7 @@ export default function Extensao() {
           <div>
             <div className="mb-3 h-1 w-16 rounded-full bg-verde-claro" />
             <h2 className="text-2xl font-bold text-texto-escuro md:text-3xl">
-              Explore as oportunidade
+              Explore as oportunidades
             </h2>
             <p className="mt-2 text-sm text-texto-escuro/75 md:text-base">
               Conheça os projetos e ações de extensão em andamento
@@ -103,6 +99,7 @@ export default function Extensao() {
               categoria="Programa"
               titulo="PETComp"
               subtitulo="Programa de Educação Tutorial"
+              href="#"
             >
               Desenvolve ações de ensino, pesquisa e extensão, contribuindo para a formação acadêmica no curso.
             </OportunidadeCard>
@@ -113,6 +110,7 @@ export default function Extensao() {
               categoria="Associação"
               titulo="LORDE"
               subtitulo="Associação Atlética Acadêmica"
+              href="#"
             >
               Integra os estudantes por meio do esporte, de eventos e ações que fortalecem a vida acadêmica.
             </OportunidadeCard>
@@ -123,6 +121,7 @@ export default function Extensao() {
               categoria="Associação"
               titulo="DAComp"
               subtitulo="Diretório Acadêmico de Computação"
+              href="#"
             >
               Representa o corpo discente, defende os interesses dos estudantes e promove iniciativas no curso.
             </OportunidadeCard>

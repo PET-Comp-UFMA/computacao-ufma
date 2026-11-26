@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import type { ReactNode } from 'react';
 
 interface OportunidadeCardProps {
@@ -8,7 +9,7 @@ interface OportunidadeCardProps {
     titulo: string;
     subtitulo: string;
     children: ReactNode;
-    onSaibaMais?: () => void;
+    href: string;
 }
 
 export default function OportunidadeCard({
@@ -18,10 +19,10 @@ export default function OportunidadeCard({
     titulo,
     subtitulo,
     children,
-    onSaibaMais,
+    href,
 }: OportunidadeCardProps) {
     return (
-        <article className="flex flex-col justify-between rounded-2xl bg-azul-escuro p-6 bg-gradient-to-br from-verde-claro/25 via-azul-escuro to-azul-escuro text-texto-claro shadow-md">
+        <article className="flex flex-col justify-between rounded-2xl bg-linear-to-br from-verde-claro/25 via-azul-escuro to-azul-escuro p-6 text-texto-claro shadow-md">
             <div>
                 <div className="flex items-start justify-between gap-4">
                     <Image 
@@ -51,14 +52,13 @@ export default function OportunidadeCard({
             </div>
 
             <div className="mt-8">
-                <button 
-                    type="button"
-                    onClick={onSaibaMais}
+                <Link
+                    href={href}
                     className="inline-flex items-center gap-2 rounded-full bg-verde-claro px-5 py-2 text-xs font-semibold text-azul-escuro transition-opacity hover:opacity-90"
                 >
                     <span>Saiba mais</span>
                     <span aria-hidden="true">→</span>
-                </button>
+                </Link>
             </div>
         </article>
     )
