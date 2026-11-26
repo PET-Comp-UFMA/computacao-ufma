@@ -5,7 +5,7 @@ export default function CargaHorariaCard() {
       <p className="mt-1 text-lg font-semibold text-verde-claro">de extensão</p>
       <p className="mt-3 text-sm leading-relaxed text-texto-claro/90">
         Parte obrigatória da sua formação. 10% da carga horária do curso.
-      </p>x
+      </p>
     </aside>
   );
 }

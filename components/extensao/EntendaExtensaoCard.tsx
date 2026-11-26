@@ -16,7 +16,7 @@ export default function EntendaExtensaoCard({
 }: EntendaExtensaoCardProps) {
     return (
         <article className="rounded-xl bg-texto-claro p-6 shadow-sm">
-            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-lg bg-verde-claro/20">
+            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-lg bg-verde-claro">
                 <Image src={iconeSrc} alt={iconeAlt} width={24} height={24} />
             </div>
 
