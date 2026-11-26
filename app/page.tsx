@@ -6,7 +6,6 @@ import PageBanner from '@/components/layout/PageBanner'
 export default function Inicio() {
   return (
     <main>
-      <Header />
       <PageBanner
         imagem="/images/banner_home.png"
         sobretitulo="Universidade Federal do Maranhão"
@@ -14,7 +13,6 @@ export default function Inicio() {
         tamanho="grande"
       />
       <Coordenacao />
-      <Footer />
     </main>
   )
 }
