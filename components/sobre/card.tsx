@@ -9,30 +9,37 @@ interface CardProps{
   lattes: string;
   email: string;
   modal: string;
+  tema?: "escuro" | "claro";
 }
 
-export function Card ({nome, imagem, coordenacao, atividade, linkedin, lattes, email, modal} : CardProps){
+export function Card ({nome, imagem, coordenacao, atividade, linkedin, lattes, email, modal, tema = "escuro"} : CardProps){
   function AbrirLink(link:string){
     window.location.href = link;
   }
   function AbrirPopUP(link: string){
 
-  } 
+  }
+  const corFundo = tema == "escuro" ? "bg-transparente" : "bg-verde-fraco";
+  const corTexto = tema == "escuro" ? "text-texto-claro" : "text-verde-escuro";
+  const corBorda = tema == "escuro" ? "border-0" :"border-1 border-verde-escuro"
   return(
-  <div className = " bg-azul-escuro rounded-md  w-full max-w-53 max-h-25 max-auto overflow-hidden">
+  <div className="px-6 py-5">
+    <div className={corFundo + " " + corBorda + " rounded-[25px] w-95 h-50 overflow-hidden"}>
     <div className = "flex flex-row gap-0.5">
-      <div className = "h-13 w-13 p-1.25 flex overflow-hidden">
-        <img className="w-full h-auto object-fill rounded-tl-md" src ={imagem} alt= {'Foto de perfil de ${nome}'}></img>
+      <div className = "h-28 w-26 px-4 py-4 flex overflow-hidden">
+        <img className="w-full h-auto object-fill rounded-tl-[19px]" src ={imagem} alt= {"Foto de perfil de" + nome}></img>
       </div>
-    <span className = "font-sans text-texto-claro" >{nome}</span>
+      <div className=" flex flex-1 items-center ">
+        <span className={"font-roboto text-xl font-medium " + corTexto}>{nome}</span>
+      </div>
     </div>
-    <div className="flex flex-row gap-0.5">
-      <p className = "font-sans text-verde-claro justify-center">{coordenacao}</p>
-
+    <div className="flex flex-row gap-0.5 px-4 font-medium">
+      <p className = "font-roboto text-verde-claro justify-center">{coordenacao}</p>
+      <span className="text-verde-claro">•</span>
       <p className = "font-sans text-verde-claro justify-center">{atividade}</p>
     </div>
-    <div className="flex flex-row gap-3">
-      <div className = "flex flex-row gap-2.5 max w-20 p-1 ">
+    <div className="flex flex-row gap-3 px-3.5 py-2">
+      <div className = "flex flex-row gap-2.5 w-28 p-1 ">
       <button className="LinkedIn" onClick={() => AbrirLink(linkedin)}>
         <img src = "/icons/linkedin.png"></img>
       </button>
@@ -44,15 +51,17 @@ export function Card ({nome, imagem, coordenacao, atividade, linkedin, lattes, e
       </button>
       </div>
     
-    <div className="flex-1 px-0.75">
-      <button className = "bg-verde-claro rounded-md  w-full max-h-6 max-auto flex flex-row p-1 gap-5"  onClick={() => AbrirPopUP(modal)}>
-      <p className="text-texto-claro font-sans text-xs items-center justify-center">Ver Mais</p>
-      <img src="/icons/seta.png"></img>
-    </button>
-    </div>
+      <div className="flex flex-1 px-3">
+        <button className = "bg-verde-claro rounded-[25px]  w-full h-8 max-auto flex flex-row px-3  items-center justify-between"  onClick={() => AbrirPopUP(modal)}>
+        <p className="text-texto-claro font-roboto text-xs font-medium">Ver Mais</p>
+        <img className="flex flex-0 w-6" src="/icons/seta.png"></img>
+      </button>
+      </div>
     </div>
     
   </div>
+  </div>
+  
   
   );
 }

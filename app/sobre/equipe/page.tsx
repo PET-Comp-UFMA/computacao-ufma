@@ -2,9 +2,10 @@ import { Card } from "@/components/sobre/card";
 
 export default function Equipe() {
   return( 
-  <div>
-    <h1>Equipe</h1>
-     <Card nome = "ricardo" imagem = "https://sigaa.ufma.br/sigaa/verFoto?idFoto=3620875&key=1a826f0017f6309c70367f01507f0b5f" coordenacao="ccom" atividade = "bla bla" linkedin="jkss.com" lattes="sjdhj.com" email="rridjn@gmail.com" modal="jss"></Card>
+  <div className="flex flex-row">
+     <Card nome = "Prof. Dr. Matheus Chaves Menezes" imagem = "https://sigaa.ufma.br/sigaa/verFoto?idFoto=3620875&key=1a826f0017f6309c70367f01507f0b5f" coordenacao="Coordenador" atividade = " Ciência da Computação" linkedin="https://www.linkedin.com/in/menezes94/" lattes="https://lattes.cnpq.br/5225992710518109" email="matheus.menezes@ufma.br" modal="jss" tema="claro"></Card>
+     <Card nome = "Prof. Dr. Matheus Chaves Menezes" imagem = "https://sigaa.ufma.br/sigaa/verFoto?idFoto=3620875&key=1a826f0017f6309c70367f01507f0b5f" coordenacao="Coordenador" atividade = " Ciência da Computação" linkedin="https://www.linkedin.com/in/menezes94/" lattes="https://lattes.cnpq.br/5225992710518109" email="matheus.menezes@ufma.br" modal="jss" tema="claro"></Card>
+     <Card nome = "Prof. Dr. Matheus Chaves Menezes" imagem = "https://sigaa.ufma.br/sigaa/verFoto?idFoto=3620875&key=1a826f0017f6309c70367f01507f0b5f" coordenacao="Coordenador" atividade = " Ciência da Computação" linkedin="https://www.linkedin.com/in/menezes94/" lattes="https://lattes.cnpq.br/5225992710518109" email="matheus.menezes@ufma.br" modal="jss" tema="claro"></Card>
   </div>
 
   );
