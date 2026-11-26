@@ -29,3 +29,4 @@ export default function Text_Image({texto:{titulo,conteudo},
     </div>
     )
 }
+
