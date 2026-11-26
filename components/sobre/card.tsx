@@ -19,7 +19,7 @@ export function Card ({nome, imagem, coordenacao, atividade, linkedin, lattes, e
   function AbrirPopUP(link: string){
 
   }
-  const corFundo = tema == "escuro" ? "bg-transparente" : "bg-verde-fraco";
+  const corFundo = tema == "escuro" ? "bg-transparente/25" : "bg-verde-fraco";
   const corTexto = tema == "escuro" ? "text-texto-claro" : "text-verde-escuro";
   const corBorda = tema == "escuro" ? "border-0" :"border-1 border-verde-escuro"
   return(
