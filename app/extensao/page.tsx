@@ -1,12 +1,12 @@
 import CargaHorariaCard from '@/components/extensao/CargaHorariaCard';
 import EntendaExtensaoCard from '@/components/extensao/EntendaExtensaoCard';
-import Breadcrumb from '@/components/layout/Breadcrumb'
-import PageBanner from '@/components/layout/PageBanner'
+import Breadcrumb from '@/components/layout/Breadcrumb';
+import PageBanner from '@/components/layout/PageBanner';
+import OportunidadeCard from '@/components/extensao/OportunidadeCard';
 
 export default function Extensao() {
   return (
-    <main className="min-h-screen bg-fundo font-sans text-texto-escuro">
-
+    <main>
       <PageBanner
         imagem="/images/foto_entrada_ccet.png"
         titulo="Extensão"
@@ -18,11 +18,13 @@ export default function Extensao() {
             { nome: 'Extensão' },
           ]}
         />
+
+        <div className="lg:absolute lg:top-1/2 lg:right-16 lg:-translate-y-1/2">
+          <CargaHorariaCard />
+        </div>
       </PageBanner>
 
       <div className="mx-auto max-w-6xl px-6 py-12">
-        <CargaHorariaCard />
-
         <section className="py-12">
           <div>
             <div className="mb-3 h-1 w-16 rounded-full bg-verde-claro" />
@@ -30,7 +32,7 @@ export default function Extensao() {
               Entenda a extensão
             </h2>
             <p className="mt-2 text-sm text-texto-escuro md:text-base">
-              O esencial para participai, registrar e aproveitar suas horas.
+              O essencial para participar, registrar e aproveitar suas horas.
             </p>
           </div>
 
@@ -51,7 +53,7 @@ export default function Extensao() {
             <EntendaExtensaoCard
               iconeSrc="/icons/lista.svg"
               iconeAlt="Ícone de prancheta com lista"
-              titulo="Quais atividade contam?"
+              titulo="Quais atividades contam?"
             >
               A carga horária pode ser obtida em programas como PET e PIBITI,
               projetos de extensão e de PAD+, atividades das Ligas Acadêmicas,
@@ -76,6 +78,53 @@ export default function Extensao() {
               solicitar a matrícula na UCE à coordenação do curso ou de
               extensão.
             </EntendaExtensaoCard>
+          </div>
+        </section>
+
+        <section className="py-12">
+          <div>
+            <div className="mb-3 h-1 w-16 rounded-full bg-verde-claro" />
+            <h2 className="text-2xl font-bold text-texto-escuro md:text-3xl">
+              Explore as oportunidades
+            </h2>
+            <p className="mt-2 text-sm text-texto-escuro/75 md:text-base">
+              Conheça os projetos e ações de extensão em andamento
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            <OportunidadeCard
+              logoSrc="/logos/petcomp.svg"
+              logoAlt="Logo do Programa de Educação Tutorial (PETComp)"
+              categoria="Programa"
+              titulo="PETComp"
+              subtitulo="Programa de Educação Tutorial"
+              href="#"
+            >
+              Desenvolve ações de ensino, pesquisa e extensão, contribuindo para a formação acadêmica no curso.
+            </OportunidadeCard>
+
+            <OportunidadeCard
+              logoSrc="/logos/lorde.svg"
+              logoAlt="Logo da Associação Atlética Acadêmica LORDE"
+              categoria="Associação"
+              titulo="LORDE"
+              subtitulo="Associação Atlética Acadêmica"
+              href="#"
+            >
+              Integra os estudantes por meio do esporte, de eventos e ações que fortalecem a vida acadêmica.
+            </OportunidadeCard>
+
+            <OportunidadeCard
+              logoSrc="/logos/dacomp.svg"
+              logoAlt="Logo do Diretório Acadêmico de Computação (DAComp)"
+              categoria="Associação"
+              titulo="DAComp"
+              subtitulo="Diretório Acadêmico de Computação"
+              href="#"
+            >
+              Representa o corpo discente, defende os interesses dos estudantes e promove iniciativas no curso.
+            </OportunidadeCard>
           </div>
         </section>
       </div>
