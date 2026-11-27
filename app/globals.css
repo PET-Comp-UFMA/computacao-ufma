@@ -16,6 +16,7 @@
   --color-ia: #00A6C7;
   --color-licenciatura: #6A00C7;
 
+  --color-divisoria: #d6d6d6;
   /* fonte */
   --font-sans: var(--font-poppins), system-ui, sans-serif;
 }

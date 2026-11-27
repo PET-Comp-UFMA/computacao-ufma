@@ -37,7 +37,7 @@ export function NossasFormacoes() {
       aria-labelledby="nossas-formacoes-titulo"
       className="bg-fundo py-12 md:py-16"
     >
-      <div className="mx-auto max-w-7xl px-6">
+      <div>
         <h2
           id="nossas-formacoes-titulo"
           className="text-2xl font-bold tracking-tight text-texto-escuro sm:text-3xl"
