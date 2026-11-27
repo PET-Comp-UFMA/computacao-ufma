@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import type { Laboratorio } from '@/components/pesquisa/laboratorios/dados'
+import LabModal from '@/components/pesquisa/laboratorios/LabModal'
 
 type LabCardProps = {
   laboratorio: Laboratorio
@@ -30,16 +31,7 @@ export default function LabCard({ laboratorio }: LabCardProps) {
           {laboratorio.nome}
         </h2>
         <p className="mt-1 mb-[25px] text-sm leading-[18px]">{laboratorio.descricao}</p>
-        {/* Os detalhes serão integrados quando o componente do laboratório estiver disponível. */}
-        <button
-          type="button"
-          disabled
-          aria-describedby="laboratorios-detalhes"
-          aria-label={`Saiba mais sobre ${laboratorio.nome}`}
-          className="mt-auto min-h-[38px] cursor-not-allowed rounded-[20px] bg-verde-claro px-[30px] py-2.5 text-sm leading-[18px] font-semibold text-texto-claro"
-        >
-          Saiba mais
-        </button>
+        <LabModal laboratorio={laboratorio} />
       </div>
     </article>
   )
