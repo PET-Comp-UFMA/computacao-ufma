@@ -4,6 +4,7 @@ import Breadcrumb from '@/components/layout/Breadcrumb';
 import PageBanner from '@/components/layout/PageBanner';
 import OportunidadeCard from '@/components/extensao/OportunidadeCard';
 import LigaCard from '@/components/extensao/LigaCard';
+import ProjetoExtensaoCard from '@/components/extensao/ProjetoExtensaoCard';
 
 export default function Extensao() {
   return (
@@ -140,9 +141,11 @@ export default function Extensao() {
               Conheça as ligas acadêmicas ativas do curso de Ciência da Computação da UFMA.
           </p>
 
-          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 
               <LigaCard
+                  logoSrc="/logos/ladsisC.png"
+                  logoAlt="Logo da LADSIS"
                   titulo="LADSIS"
                   descricao="Liga Acadêmica de Desenvolvimento de Sistemas"
                   categoria="Desenvolvimento Web"
@@ -150,6 +153,8 @@ export default function Extensao() {
               />
 
               <LigaCard
+                  logoSrc="/logos/lasegC.png"
+                  logoAlt="Logo da LADSIS"
                   titulo="LASEG"
                   descricao="Liga Acadêmica de Cibersegurança"
                   categoria="Cibersegurança"
@@ -157,6 +162,8 @@ export default function Extensao() {
               />
 
               <LigaCard
+                  logoSrc="/logos/lajdC.png"
+                  logoAlt="Logo da LADSIS"
                   titulo="LAJD"
                   descricao="Liga Acadêmica de Jogos Digitais"
                   categoria="Desenvolvimento de Jogos"
@@ -164,6 +171,8 @@ export default function Extensao() {
               />
 
               <LigaCard
+                  logoSrc="/logos/lacro.png"
+                  logoAlt="Logo da LADSIS"
                   titulo="LACRO"
                   descricao="Liga Acadêmica de Robótica"
                   categoria="Robótica"
@@ -171,6 +180,45 @@ export default function Extensao() {
               />
 
           </div>
+      </section>
+
+      <section className='py-12'>
+        <div className='mb-3 h-1 w-16 rounded-full bg-verde-claro' />
+
+        <h2 className='text-2xl font-bold text-texto-escuro md:text-3xl'>
+          Projetos de Extensão
+        </h2>
+
+        <p className='mt-2 text-sm text-texto-escuro md:text-base'>
+          Conheça as iniciativas que aproximam a Computação da comunidade.
+        </p>
+
+        <div className='mt-8 flex flex-col gap-4'>
+
+          <ProjetoExtensaoCard
+          titulo="Informática para a Terceira Idade"
+          descricao="Inclusão digital e aprendizado de informática para pessoas idosas."
+          coordenacao="Portela e Inez"
+          href="#"
+          />
+
+          <ProjetoExtensaoCard
+            titulo="Projeto de Apoio às Ações Extensionistas do Grupo PET"
+            descricao="Apoio às atividades de extensão desenvolvidas pelo PET junto à comunidade."
+            coordenacao="Geraldo Braz Junior"
+            href="#"
+          />
+
+          <ProjetoExtensaoCard
+            titulo="TecnoInova Extensão"
+            descricao="Descrição a confirmar."
+            coordenacao="Geraldo Braz Junior"
+            href="#"
+          />  
+        </div>
+
+
+
       </section>
 
       </div>
