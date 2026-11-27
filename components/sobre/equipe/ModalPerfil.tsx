@@ -67,7 +67,7 @@ export function ModalPerfil({docente, onFechar}: ModalPerfilProps){
                         <h3 className="font-roboto text-3xl font-medium text-white">Áreas de Interesse</h3>
                         <ul className="mt-3 flex flex-wrap gap-3">
                             {docente.areasInteresse?.map((area) => (
-                                <li key={area} className="rounded-full border border-verde-claro px-4 py-1 font-roboto text-sm text-verde-claro bg-verde-forte">
+                                <li key={area} className="rounded-full border border-verde-claro px-4 py-1 font-roboto text-sm text-verde-claro bg-verde-forte transition-transform duration-200 hover:scale-110 focus-visible:scale-110 ">
                                     {area}
                                 </li>
                             ))}

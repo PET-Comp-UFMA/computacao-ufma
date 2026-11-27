@@ -41,19 +41,19 @@ export function Card ({nome, imagem, coordenacao, atividade, linkedin, lattes, e
 
       <div className="flex flex-row gap-3 px-3.5 py-2">
         <div className = "flex flex-row gap-2.5 w-28 p-1 ">
-          <a href={linkedin} target="_blank" rel="noopener noreferrer">
+          <a href={linkedin} target="_blank" rel="noopener noreferrer" className="inline-block transition-transform duration-200 hover:scale-110 focus-visible:scale-110">
             <img  src="/icons/linkedin.png" alt="LinkedIn" />
           </a>
-          <a href={lattes} target="_blank" rel="noopener noreferrer">
+          <a href={lattes} target="_blank" rel="noopener noreferrer" className="inline-block transition-transform duration-200 hover:scale-110 focus-visible:scale-110">
             <img  src="/icons/lattes.png" alt="Lattes" />
           </a>
-          <a href={`mailto:${email}`}>
+          <a href={`mailto:${email}`} className="inline-block transition-transform duration-200 hover:scale-110 focus-visible:scale-110">
             <img src="/icons/gmail.png" alt="E-mail" />
           </a>
         </div>
       
         <div className="flex flex-1 px-3">
-          <button onClick={() => setAberto(true)}  className = "bg-verde-claro rounded-[25px]  w-full h-8 max-auto flex flex-row px-3  items-center justify-between">
+          <button onClick={() => setAberto(true)}  className = "bg-verde-claro rounded-[25px]  w-full h-8 max-auto flex flex-row px-3  items-center justify-between transition-transform duration-200 hover:scale-110 focus-visible:scale-110 ">
             <p className="text-texto-claro font-roboto text-xs font-medium">Ver Mais</p>
             <img className="flex flex-0 w-6" src="/icons/seta.png" alt="Seta"></img>
           </button>
