@@ -1,4 +1,4 @@
-import Seta from '@/components/ui/Seta'
+import Seta from '@/components/ui/Seta' 
 
 interface PublicacaoProps {
   tag: string;
