@@ -1,5 +1,6 @@
 "use client";
-
+import { useState } from "react";
+import { ModalPerfil } from "./ModalPerfil";
 interface CardProps{
   nome: string;
   imagem: string;
@@ -8,7 +9,7 @@ interface CardProps{
   linkedin: string;
   lattes: string;
   email: string;
-  modal: string;
+  modal?: string;
   tema?: "escuro" | "claro";
 }
 
@@ -25,6 +26,7 @@ export function Card ({nome, imagem, coordenacao, atividade, linkedin, lattes, e
   const corFundo = tema == "escuro" ? "bg-transparente/25" : "bg-verde-fraco";
   const corTexto = tema == "escuro" ? "text-texto-claro" : "text-verde-escuro";
   const corBorda = tema == "escuro" ? "border-0" :"border-1 border-verde-escuro"
+   const [aberto, setAberto] = useState(false);
   return(
   <div className="px-6 py-5">
     <div className={corFundo + " " + corBorda + " rounded-[25px] w-95 h-50 overflow-hidden"}>
@@ -56,11 +58,20 @@ export function Card ({nome, imagem, coordenacao, atividade, linkedin, lattes, e
       </div>
     
       <div className="flex flex-1 px-3">
-        <button className = "bg-verde-claro rounded-[25px]  w-full h-8 max-auto flex flex-row px-3  items-center justify-between">
+        <button onClick={() => setAberto(true)}  className = "bg-verde-claro rounded-[25px]  w-full h-8 max-auto flex flex-row px-3  items-center justify-between">
           <p className="text-texto-claro font-roboto text-xs font-medium">Ver Mais</p>
           <img className="flex flex-0 w-6" src="/icons/seta.png" alt="Seta"></img>
         </button>
       </div>
+      {aberto && (
+        <ModalPerfil
+          docente={{nome, imagem, coordenacao, atividade, linkedin, lattes, email, 
+            descricao:'Atualmente é Professor Titular da Universidade Federal do Maranhão, coordenador do Núcleo de Computação Aplicada NCA-UFMA, emembro da SBC (Sociedade Brasileira de Computação) e da ACM (Association for Computing Machinery).' 
+            ,formacao:'Possui graduação em Engenharia Civil pela Universidade Estadual do Maranhão (1990), mestrado em Engenharia Civil - Estruturas pela Pontifícia Universidade Católica do Rio de Janeiro (1993) e doutorado em Informática pela Pontifícia Universidade Católica do Rio de Janeiro (2001).', areasInteresse: ['Ciências da Computação', 'Vizualização Volumétrica', 'Gif', 'Ciências da Computação', 'Computação Gráfica' ],
+          }}
+          onFechar ={() => setAberto(false)}
+        />
+      )}
     </div>
   </div>
 </div>
