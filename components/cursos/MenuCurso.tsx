@@ -11,12 +11,11 @@ interface MenuCursoProps {
   ativo?: ItemMenu
 }
 
-//sio essa cor ai #d9d9d9 tem que criar no global e mudar
-function MenuCurso({ ativo = 'Visão Geral' }: MenuCursoProps) {
+function MenuCurso({ ativo = 'visao-geral' }: MenuCursoProps) {
   return (
     <nav
     aria-label="Menu do curso"
-    className="flex h-12 items-center gap-6 overflow-x-auto bg-[#D9D9D9] px-4 text-sm shadow-md md:gap-[50px] md:px-[50px]"
+    className="flex h-12 items-center gap-6 overflow-x-auto bg-transparente px-4 text-sm shadow-md md:gap-[50px] md:px-[50px]"
     >
       {itens.map((item) => (
         <button
