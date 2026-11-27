@@ -1,3 +1,5 @@
+import Seta from '@/components/ui/Seta' 
+
 interface PublicacaoProps {
   tag: string;
   titulo: string;
@@ -22,9 +24,10 @@ export default function PublicacaoCard({ tag, titulo, autores, periodico, ano, l
         </p>
       </div>
       <div>
-        <p>{periodico}</p>
-        <p>{ano}</p>
-        <a href={link}>Ler Publicação</a>
+        <p className="border-b pb-1 text-[10px] ">{periodico} - {ano}</p>
+        <a className="text-verde-claro font-semibold text-[14px] flex justify-between " href={link}>
+          Ler Publicação <Seta className='size-5 -rotate-45'/>
+        </a>
       </div>
     </div>
   );
