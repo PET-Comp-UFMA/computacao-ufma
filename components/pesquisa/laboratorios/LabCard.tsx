@@ -7,7 +7,7 @@ type LabCardProps = {
 
 export default function LabCard({ laboratorio }: LabCardProps) {
   return (
-    <article aria-labelledby={`lab-${laboratorio.id}`} className="flex h-full min-h-[320px] flex-col overflow-hidden rounded-[12px] bg-verde-claro shadow-lg">
+    <article aria-labelledby={`lab-${laboratorio.id}`} className="flex h-full min-h-[320px] flex-col overflow-hidden rounded-[12px] bg-texto-claro shadow-lg">
       <div className="relative flex h-[150px] shrink-0 items-center justify-center overflow-hidden bg-texto-claro">
         <Image
           src={laboratorio.fundo}
@@ -36,7 +36,7 @@ export default function LabCard({ laboratorio }: LabCardProps) {
           disabled
           aria-describedby="laboratorios-detalhes"
           aria-label={`Saiba mais sobre ${laboratorio.nome}`}
-          className="mt-auto min-h-[38px] cursor-not-allowed rounded-[20px] bg-verde-escuro px-[30px] py-2.5 text-sm leading-[18px] font-semibold text-texto-claro"
+          className="mt-auto min-h-[38px] cursor-not-allowed rounded-[20px] bg-verde-claro px-[30px] py-2.5 text-sm leading-[18px] font-semibold text-texto-claro"
         >
           Saiba mais
         </button>
