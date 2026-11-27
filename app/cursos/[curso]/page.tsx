@@ -6,7 +6,7 @@ import EstruturaCurricular, {
   type CorCurso,
 } from '@/components/cursos/EstruturaCurricular'
 import SobreCurso from '@/components/cursos/SobreCurso'
-
+import MenuCurso from '@/components/cursos/MenuCurso'
 
 type DadosCurso = {
   imagem: string
@@ -136,6 +136,8 @@ export default async function Curso({
           <InfoCurso rotulo="Turno" valor={dados.turno} />
         </div>
       </PageBanner>
+      
+      <MenuCurso /> {}
 
       <div className="mx-auto max-w-6xl space-y-8 px-4 py-8">
         <SobreCurso paragrafos={dados.sobre} />
