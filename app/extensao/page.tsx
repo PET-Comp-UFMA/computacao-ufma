@@ -3,6 +3,7 @@ import EntendaExtensaoCard from '@/components/extensao/EntendaExtensaoCard';
 import Breadcrumb from '@/components/layout/Breadcrumb';
 import PageBanner from '@/components/layout/PageBanner';
 import OportunidadeCard from '@/components/extensao/OportunidadeCard';
+import LigaCard from '@/components/extensao/LigaCard';
 
 export default function Extensao() {
   return (
@@ -127,6 +128,51 @@ export default function Extensao() {
             </OportunidadeCard>
           </div>
         </section>
+
+        <section className="py-12">
+          <div className="mb-3 h-1 w-16 rounded-full bg-verde-claro" />
+
+          <h2 className="text-2xl font-bold text-texto-escuro md:text-3xl">
+              Ligas de Computação
+          </h2>
+
+          <p className="mt-2 text-sm text-texto-escuro md:text-base">
+              Conheça as ligas acadêmicas ativas do curso de Ciência da Computação da UFMA.
+          </p>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+              <LigaCard
+                  titulo="LADSIS"
+                  descricao="Liga Acadêmica de Desenvolvimento de Sistemas"
+                  categoria="Desenvolvimento Web"
+                  href="#"
+              />
+
+              <LigaCard
+                  titulo="LASEG"
+                  descricao="Liga Acadêmica de Cibersegurança"
+                  categoria="Cibersegurança"
+                  href="#"
+              />
+
+              <LigaCard
+                  titulo="LAJD"
+                  descricao="Liga Acadêmica de Jogos Digitais"
+                  categoria="Desenvolvimento de Jogos"
+                  href="#"
+              />
+
+              <LigaCard
+                  titulo="LACRO"
+                  descricao="Liga Acadêmica de Robótica"
+                  categoria="Robótica"
+                  href="#"
+              />
+
+          </div>
+      </section>
+
       </div>
     </main>
   );
