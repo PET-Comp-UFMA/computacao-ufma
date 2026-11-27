@@ -1,5 +1,7 @@
 import Breadcrumb from '@/components/layout/Breadcrumb'
 import PageBanner from '@/components/layout/PageBanner'
+import ContatoSetores from '@/components/sobre/ContatoSetores'
+import ContatoLocalizacao from '@/components/sobre/ContatoLocalizacao'
 
 export default function Contato() {
   return (
@@ -17,6 +19,14 @@ export default function Contato() {
           ]}
         />
       </PageBanner>
+
+
+      <div className='mx-auto grid max-w-6xl items-stretch gap-8 px-6 py-12 lg:grid-cols-[1.3fr_1fr]'>
+        <ContatoSetores />
+        <ContatoLocalizacao />
+      </div>
+
+
     </main>
   )
 }
