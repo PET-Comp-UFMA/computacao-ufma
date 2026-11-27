@@ -11,6 +11,7 @@ type AvisoCardProps = {
 }
 
 const coresTexto: Record<CorCurso, string> = {
+    abi: '',
     cc: 'text-cc',
     ia: 'text-ia',
     licenciatura: 'text-licenciatura',

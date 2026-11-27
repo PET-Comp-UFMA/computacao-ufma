@@ -9,6 +9,7 @@ import SobreCurso from '@/components/cursos/SobreCurso'
 import { ReconhecimentoCurso } from '@/components/cursos/ReconhecimentoCruso'
 import { Avisos } from '@/components/cursos/Avisos'
 import DuvidasFrequentes from '@/components/cursos/DuvidasFrequentes'
+import ContatoCard from '@/components/cursos/ContatoCard'
 
 type DadosCurso = {
   imagem: string
@@ -157,8 +158,9 @@ export default async function Curso({
           cor={dados.cor}
         />
 
-        <div>
+        <div className='flex justify-between'>
           <DuvidasFrequentes cor={dados.cor} />
+          <ContatoCard cor={dados.cor} />
         </div>
 
       </div>

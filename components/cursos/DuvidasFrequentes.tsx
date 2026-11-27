@@ -8,6 +8,7 @@ type DuvidaProps = {
 }
 
 const coresSeta: Record<CorCurso, string> = {
+    abi: 'text-abi',
     cc: 'text-cc',
     ia: 'text-ia',
     licenciatura: 'text-licenciatura',
@@ -40,7 +41,7 @@ export default function DuvidasFrequentes({
     cor,
 }: DuvidaProps) {
     return (
-        <div className="Duvidas flex flex-col gap-8 max-w-180">
+        <div className="Duvidas flex flex-col gap-8 max-w-170">
             <h2 className='text-2xl font-semibold'>Dúvidas frequentes</h2>
 
             <div className='flex flex-col gap-8 w-full'>
@@ -62,7 +63,7 @@ function DuvidaCard({
     cor,
 }: DuvidaProps) {
     return (
-        <details key={id} className='group bg-[#E8EEF4] rounded-xl px-5 py-3.5 shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] overflow-hidden'>
+        <details key={id} className='bg-[#E8EEF4] rounded-xl px-5 py-1 shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] overflow-hidden'>
             <summary className='flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none font-medium text-azul-escuro'>
                 <p>&quot;{question}&quot;</p>
                 <SetaSvg cor={cor} />

@@ -1,7 +1,8 @@
-export type CorCurso = 'cc' | 'ia' | 'licenciatura'
+export type CorCurso = 'cc' | 'ia' | 'licenciatura' | 'abi'
 
 
 const bordaPorCurso: Record<CorCurso, string> = {
+  abi: '',
   cc: 'border-cc',
   ia: 'border-ia',
   licenciatura: 'border-licenciatura',

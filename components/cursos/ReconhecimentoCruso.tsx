@@ -1,4 +1,4 @@
-export type CorCurso = 'cc' | 'ia' | 'licenciatura'
+import { CorCurso } from "./EstruturaCurricular";
 
 type ReconhecimentoCursoCardProps = {
     title?: string;
@@ -7,12 +7,14 @@ type ReconhecimentoCursoCardProps = {
 }
 
 const bordaPorCurso: Record<CorCurso, string> = {
+    abi: '',
     cc: 'border-cc',
     ia: 'border-ia',
     licenciatura: 'border-licenciatura',
 }
 
 const backgorundColor: Record<CorCurso, string> = {
+    abi: '',
     cc: 'bg-cc',
     ia: 'bg-ia',
     licenciatura: 'bg-licenciatura',
