@@ -22,7 +22,6 @@
 
   /* fonte */
   --font-sans: var(--font-poppins), system-ui, sans-serif;
-  --font-roboto: var(--font-roboto), system-ui, sans-serif;
 }
 
 body {
