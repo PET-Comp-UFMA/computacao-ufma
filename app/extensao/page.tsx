@@ -19,7 +19,7 @@ export default function Extensao() {
           ]}
         />
       </PageBanner>
-      
+
       <div className="mx-auto max-w-6xl px-6 py-12">
         <CargaHorariaCard />
 
@@ -35,7 +35,7 @@ export default function Extensao() {
           </div>
 
           <div className="mt-8 grid gap-6 md:grid-cols-3">
-            <EntendaExtensaoCard 
+            <EntendaExtensaoCard
               iconeSrc="/icons/livro.svg"
               iconeAlt="Ícone de um livro aberto"
               titulo="O que é extensão?"
@@ -81,3 +81,4 @@ export default function Extensao() {
       </div>
     </main>
   );
+}
