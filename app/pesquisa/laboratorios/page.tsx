@@ -32,9 +32,9 @@ export default function Laboratorios() {
         <p id="laboratorios-detalhes" className="sr-only">
           As informações detalhadas dos laboratórios ainda não estão disponíveis nesta versão.
         </p>
-        <ul className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:mt-[79px] xl:grid-cols-3 xl:gap-[50px]">
+        <ul className="mx-auto mt-12 grid max-w-[1080px] grid-cols-1 justify-items-center gap-[30px] md:grid-cols-2 lg:mt-[79px] lg:grid-cols-3">
           {laboratorios.map(laboratorio => (
-            <li key={laboratorio.id} className="min-w-0">
+            <li key={laboratorio.id} className="w-full min-w-0 max-w-[350px]">
               <LabCard laboratorio={laboratorio} />
             </li>
           ))}
