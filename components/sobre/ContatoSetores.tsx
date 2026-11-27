@@ -20,14 +20,7 @@ export default function ContatoSetores() {
                     {contatos.map((contato) => (
                         <div key={contato.id}>
                             <h3 className="text-lg font-semibold">{contato.titulo}</h3>
-                            <p> E-mail: {' '}
-                                <a
-                                    href={`mailto:${contato.email}`}
-                                    className="text-verde-escuro hover:underline"
-                                >
-                                    {contato.email}
-                                </a>
-                            </p>
+                            <p>E-mail: {contato.email}</p>
                             <p>Atendimento: {contato.atendimento}</p>
                         </div>
 
