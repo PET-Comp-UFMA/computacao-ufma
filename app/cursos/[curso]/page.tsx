@@ -10,6 +10,7 @@ import { ReconhecimentoCurso } from '@/components/cursos/ReconhecimentoCruso'
 import { Avisos } from '@/components/cursos/Avisos'
 import DuvidasFrequentes from '@/components/cursos/DuvidasFrequentes'
 import ContatoCard from '@/components/cursos/ContatoCard'
+import MenuCurso from '@/components/cursos/MenuCurso'
 
 type DadosCurso = {
   imagem: string
@@ -138,6 +139,8 @@ export default async function Curso({
           <InfoCurso rotulo="Turno" valor={dados.turno} />
         </div>
       </PageBanner>
+
+      <MenuCurso /> { }
 
       <div className="mx-auto max-w-6xl space-y-15 px-4 py-8">
         <SobreCurso paragrafos={dados.sobre} />
