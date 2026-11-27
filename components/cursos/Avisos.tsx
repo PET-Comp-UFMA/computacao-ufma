@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export type CorCurso = 'cc' | 'ia' | 'licenciatura'
+import { CorCurso } from "./EstruturaCurricular";
 
 type AvisoCardProps = {
     title?: string;
@@ -52,7 +52,7 @@ export function Avisos({
 }: AvisoCardProps) {
     return (
         <div className='flex flex-col gap-6'>
-            <h1 className='font-semibold text-4xl'>Avisos</h1>
+            <h1 className='font-semibold text-2xl'>Avisos</h1>
             <div className='flex gap-10'>
                 <AvisoCard cor={cor} />
                 <AvisoCard cor={cor} />
