@@ -6,6 +6,10 @@ import EstruturaCurricular, {
   type CorCurso,
 } from '@/components/cursos/EstruturaCurricular'
 import SobreCurso from '@/components/cursos/SobreCurso'
+import { ReconhecimentoCurso } from '@/components/cursos/ReconhecimentoCruso'
+import { Avisos } from '@/components/cursos/Avisos'
+import DuvidasFrequentes from '@/components/cursos/DuvidasFrequentes'
+import ContatoCard from '@/components/cursos/ContatoCard'
 import MenuCurso from '@/components/cursos/MenuCurso'
 
 type DadosCurso = {
@@ -19,8 +23,8 @@ type DadosCurso = {
   turno: string
   coordenador: string
   fotoCoordenador?: string
-  cor: CorCurso 
-  obrigatorias: number 
+  cor: CorCurso
+  obrigatorias: number
   optativas: number
   complementares: number
   urlSigaa: string
@@ -40,14 +44,14 @@ const cursos: Record<string, DadosCurso> = {
     turno: 'Integral',
     coordenador: 'Prof. Dr. Matheus Chaves Menezes',
     fotoCoordenador: '/images/coord_cc.png',
-    cor: 'cc', 
-    obrigatorias: 0, 
-    optativas: 0, 
-    complementares: 0, 
+    cor: 'cc',
+    obrigatorias: 0,
+    optativas: 0,
+    complementares: 0,
     urlSigaa: 'https://sigaa.ufma.br/sigaa/public/curso/curriculo_curso.jsf?lc=pt_br&id=85766',
     sobre: [
-  'Criado em [ano], o curso já formou mais de [N] bacharéis, que atuam em empresas, órgãos públicos e universidades. Com o objetivo de formar profissionais com base sólida em matemática, algoritmos e engenharia de software, capazes de projetar e avaliar sistemas computacionais.',
-  'Docentes [N]% doutores, laboratórios, iniciação científica, ligas estudantis, competições e estágios em [empresas parceiras].',
+      'Criado em [ano], o curso já formou mais de [N] bacharéis, que atuam em empresas, órgãos públicos e universidades. Com o objetivo de formar profissionais com base sólida em matemática, algoritmos e engenharia de software, capazes de projetar e avaliar sistemas computacionais.',
+      'Docentes [N]% doutores, laboratórios, iniciação científica, ligas estudantis, competições e estágios em [empresas parceiras].',
     ],
   },
   ia: {
@@ -62,13 +66,13 @@ const cursos: Record<string, DadosCurso> = {
     coordenador: 'Prof. Dr. Tiago Bonini',
     fotoCoordenador: '/images/coord_ia.png',
     cor: 'ia',
-    obrigatorias: 0, 
-    optativas: 0, 
+    obrigatorias: 0,
+    optativas: 0,
     complementares: 0,
     urlSigaa: 'https://sigaa.exemplo.br',
     sobre: [
-    'Criado em [ano], o curso já formou mais de [N] bacharéis, que atuam em empresas, órgãos públicos e universidades. Com o objetivo de formar profissionais com base sólida em matemática, algoritmos e engenharia de software, capazes de projetar e avaliar sistemas computacionais.',
-    'Docentes [N]% doutores, laboratórios, iniciação científica, ligas estudantis, competições e estágios em [empresas parceiras].',
+      'Criado em [ano], o curso já formou mais de [N] bacharéis, que atuam em empresas, órgãos públicos e universidades. Com o objetivo de formar profissionais com base sólida em matemática, algoritmos e engenharia de software, capazes de projetar e avaliar sistemas computacionais.',
+      'Docentes [N]% doutores, laboratórios, iniciação científica, ligas estudantis, competições e estágios em [empresas parceiras].',
     ],
   },
   licenciatura: {
@@ -82,16 +86,15 @@ const cursos: Record<string, DadosCurso> = {
     turno: 'Integral',
     coordenador: 'Prof. Dr. Tiago Bonini',
     fotoCoordenador: '/images/coord_ia.png',
-    cor: 'licenciatura', 
-    obrigatorias: 0, 
-    optativas: 0, 
-    complementares: 0, 
+    cor: 'licenciatura',
+    obrigatorias: 0,
+    optativas: 0,
+    complementares: 0,
     urlSigaa: 'https://sigaa.exemplo.br',
     sobre: [
-    'Criado em [ano], o curso já formou mais de [N] bacharéis, que atuam em empresas, órgãos públicos e universidades. Com o objetivo de formar profissionais com base sólida em matemática, algoritmos e engenharia de software, capazes de projetar e avaliar sistemas computacionais.',
-    'Docentes [N]% doutores, laboratórios, iniciação científica, ligas estudantis, competições e estágios em [empresas parceiras].',
+      'Criado em [ano], o curso já formou mais de [N] bacharéis, que atuam em empresas, órgãos públicos e universidades. Com o objetivo de formar profissionais com base sólida em matemática, algoritmos e engenharia de software, capazes de projetar e avaliar sistemas computacionais.',
+      'Docentes [N]% doutores, laboratórios, iniciação científica, ligas estudantis, competições e estágios em [empresas parceiras].',
     ],
-
   },
 }
 
@@ -136,10 +139,10 @@ export default async function Curso({
           <InfoCurso rotulo="Turno" valor={dados.turno} />
         </div>
       </PageBanner>
-      
-      <MenuCurso /> {}
 
-      <div className="mx-auto max-w-6xl space-y-8 px-4 py-8">
+      <MenuCurso /> { }
+
+      <div className="mx-auto max-w-6xl space-y-15 px-4 py-8">
         <SobreCurso paragrafos={dados.sobre} />
 
         <EstruturaCurricular
@@ -149,7 +152,22 @@ export default async function Curso({
           urlSigaa={dados.urlSigaa}
           cor={dados.cor}
         />
+
+        <ReconhecimentoCurso
+          cor={dados.cor}
+        />
+
+        <Avisos
+          cor={dados.cor}
+        />
+
+        <div className='flex justify-between'>
+          <DuvidasFrequentes cor={dados.cor} />
+          <ContatoCard cor={dados.cor} />
+        </div>
+
       </div>
+
 
     </main>
   )
