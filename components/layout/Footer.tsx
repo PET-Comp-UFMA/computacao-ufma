@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // Ícones usados na página
 import { faYoutube, faInstagram, faGoogle } from '@fortawesome/free-brands-svg-icons'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Footer() {
     return (
@@ -17,13 +18,13 @@ export default function Footer() {
             <nav className='w-[20%]'>
               <h3 className='font-bold tracking-wider pb-2 border-b-2 border-verde-claro'>Links Úteis</h3>
               <div className='grid grid-cols-2 pt-2 gap-y-3 text-gray-400 text-[14px]'>
-                  <a href="#">Início</a>
-                  <a href="#">Documentos</a>
-                  <a href="#">Cursos</a>
-                  <a href="#">Sobre</a>
-                  <a href="#">ABI</a>
-                  <a href="#">Contato</a>
-                  <a href="#">Notícias</a>
+                  <Link href="/">Início</Link>
+                  <Link href="/documentos">Documentos</Link>
+                  <Link href="/cursos/abi/">Cursos</Link>
+                  <Link href="#">Sobre</Link>
+                  <Link href="/cursos/abi/">ABI</Link>
+                  <Link href="/sobre/contato/">Contato</Link>
+                  <Link href="/noticias/">Notícias</Link>
               </div>
             </nav>
             <section className='w-[20%]'>
