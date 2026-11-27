@@ -7,6 +7,7 @@ import EstruturaCurricular, {
 } from '@/components/cursos/EstruturaCurricular'
 import SobreCurso from '@/components/cursos/SobreCurso'
 
+
 type DadosCurso = {
   imagem: string
   sobretitulo: string
