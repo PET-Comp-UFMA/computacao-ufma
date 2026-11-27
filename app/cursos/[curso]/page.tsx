@@ -7,6 +7,7 @@ import EstruturaCurricular, {
 } from '@/components/cursos/EstruturaCurricular'
 import SobreCurso from '@/components/cursos/SobreCurso'
 import { ReconhecimentoCurso } from '@/components/cursos/ReconhecimentoCruso'
+import { Avisos } from '@/components/cursos/Avisos'
 
 type DadosCurso = {
   imagem: string
@@ -150,6 +151,11 @@ export default async function Curso({
         <ReconhecimentoCurso
           cor={dados.cor}
         />
+
+        <Avisos
+          cor={dados.cor}
+        />
+
       </div>
 
 

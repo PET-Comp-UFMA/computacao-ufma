@@ -12,6 +12,12 @@ const bordaPorCurso: Record<CorCurso, string> = {
     licenciatura: 'border-licenciatura',
 }
 
+const backgorundColor: Record<CorCurso, string> = {
+    cc: 'bg-cc',
+    ia: 'bg-ia',
+    licenciatura: 'bg-licenciatura',
+}
+
 export function ReconhecimentoCard({
     title,
     subtitle,
@@ -20,7 +26,7 @@ export function ReconhecimentoCard({
     return (
         <div className={`w-80 h-54 rounded-xl border-2 ${bordaPorCurso[cor]} bg-white overflow-hidden flex flex-col`}>
 
-            <div className={`w-full h-3.5 ${bordaPorCurso[cor]} shrink-0`} />
+            <div className={`w-full h-3.5 ${backgorundColor[cor]} shrink-0`} />
 
             <div className="flex-1 flex flex-col justify-center px-10">
                 <h2 className="text-xl font-bold leading-snug text-texto-escuro">
