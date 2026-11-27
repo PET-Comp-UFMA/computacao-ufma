@@ -22,7 +22,7 @@ export default function OportunidadeCard({
     href,
 }: OportunidadeCardProps) {
     return (
-        <article className="flex flex-col justify-between rounded-2xl bg-linear-to-br from-verde-claro/25 via-azul-escuro to-azul-escuro p-6 text-texto-claro shadow-md">
+        <article className="flex flex-col justify-between rounded-2xl bg-azul-escuro bg-linear-to-br from-verde-claro/25 via-azul-escuro to-azul-escuro p-6 text-texto-claro shadow-md">
             <div>
                 <div className="flex items-start justify-between gap-4">
                     <Image 
