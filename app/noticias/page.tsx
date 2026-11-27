@@ -1,3 +1,5 @@
+import Breadcrumb from '@/components/layout/Breadcrumb'
+import PageBanner from '@/components/layout/PageBanner'
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -41,6 +43,19 @@ export default function Noticias(){
   return(
     <main className="bg-fundo text-texto-escuro">
 
+      <PageBanner
+        imagem="/images/foto_entrada_ccet.png"
+        titulo="Notícias"
+        subtitulo="Confira as últimas notícais sobre os cursos e próximas datas importantes."
+      >
+        <Breadcrumb
+          itens={[
+            { nome: 'Início', href: '/' },
+            { nome: 'Notícias' },
+          ]}
+        />
+      </PageBanner>
+      
       {/* Sessão da AGENDA */}
       <section className='bg-azul-escuro text-texto-claro py-10 px-4'>
 

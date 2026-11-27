@@ -2,6 +2,10 @@ import { notFound } from 'next/navigation'
 import CardCoordenador from '@/components/cursos/CardCoordenador'
 import InfoCurso from '@/components/cursos/InfoCurso'
 import PageBanner from '@/components/layout/PageBanner'
+import EstruturaCurricular, {
+  type CorCurso,
+} from '@/components/cursos/EstruturaCurricular'
+import SobreCurso from '@/components/cursos/SobreCurso'
 
 type DadosCurso = {
   imagem: string
@@ -14,10 +18,15 @@ type DadosCurso = {
   turno: string
   coordenador: string
   fotoCoordenador?: string
+  cor: CorCurso 
+  obrigatorias: number 
+  optativas: number
+  complementares: number
+  urlSigaa: string
+  sobre: string[]
 }
 
-// Um arquivo serve 3 cursos, então os textos de cada um ficam aqui.
-// A chave (cc, ia, licenciatura) é o que aparece na URL: /cursos/cc
+
 const cursos: Record<string, DadosCurso> = {
   cc: {
     imagem: '/images/foto_porta_ccet.png',
@@ -29,7 +38,16 @@ const cursos: Record<string, DadosCurso> = {
     ingresso: 'Via ABI',
     turno: 'Integral',
     coordenador: 'Prof. Dr. Matheus Chaves Menezes',
-    fotoCoordenador: '/images/coord_cc.png'
+    fotoCoordenador: '/images/coord_cc.png',
+    cor: 'cc', 
+    obrigatorias: 0, 
+    optativas: 0, 
+    complementares: 0, 
+    urlSigaa: 'https://sigaa.ufma.br/sigaa/public/curso/curriculo_curso.jsf?lc=pt_br&id=85766',
+    sobre: [
+  'Criado em [ano], o curso já formou mais de [N] bacharéis, que atuam em empresas, órgãos públicos e universidades. Com o objetivo de formar profissionais com base sólida em matemática, algoritmos e engenharia de software, capazes de projetar e avaliar sistemas computacionais.',
+  'Docentes [N]% doutores, laboratórios, iniciação científica, ligas estudantis, competições e estágios em [empresas parceiras].',
+    ],
   },
   ia: {
     imagem: '/images/foto_entrada_ccet.png',
@@ -41,7 +59,16 @@ const cursos: Record<string, DadosCurso> = {
     ingresso: 'Via ABI',
     turno: 'Integral',
     coordenador: 'Prof. Dr. Tiago Bonini',
-    fotoCoordenador: '/images/coord_ia.png'
+    fotoCoordenador: '/images/coord_ia.png',
+    cor: 'ia',
+    obrigatorias: 0, 
+    optativas: 0, 
+    complementares: 0,
+    urlSigaa: 'https://sigaa.exemplo.br',
+    sobre: [
+    'Criado em [ano], o curso já formou mais de [N] bacharéis, que atuam em empresas, órgãos públicos e universidades. Com o objetivo de formar profissionais com base sólida em matemática, algoritmos e engenharia de software, capazes de projetar e avaliar sistemas computacionais.',
+    'Docentes [N]% doutores, laboratórios, iniciação científica, ligas estudantis, competições e estágios em [empresas parceiras].',
+    ],
   },
   licenciatura: {
     imagem: '/images/foto_porta_ccet.png',
@@ -53,7 +80,17 @@ const cursos: Record<string, DadosCurso> = {
     ingresso: 'Via SISU',
     turno: 'Integral',
     coordenador: 'Prof. Dr. Tiago Bonini',
-    fotoCoordenador: '/images/coord_ia.png'
+    fotoCoordenador: '/images/coord_ia.png',
+    cor: 'licenciatura', 
+    obrigatorias: 0, 
+    optativas: 0, 
+    complementares: 0, 
+    urlSigaa: 'https://sigaa.exemplo.br',
+    sobre: [
+    'Criado em [ano], o curso já formou mais de [N] bacharéis, que atuam em empresas, órgãos públicos e universidades. Com o objetivo de formar profissionais com base sólida em matemática, algoritmos e engenharia de software, capazes de projetar e avaliar sistemas computacionais.',
+    'Docentes [N]% doutores, laboratórios, iniciação científica, ligas estudantis, competições e estágios em [empresas parceiras].',
+    ],
+
   },
 }
 
@@ -98,6 +135,19 @@ export default async function Curso({
           <InfoCurso rotulo="Turno" valor={dados.turno} />
         </div>
       </PageBanner>
+
+      <div className="mx-auto max-w-6xl space-y-8 px-4 py-8">
+        <SobreCurso paragrafos={dados.sobre} />
+
+        <EstruturaCurricular
+          obrigatorias={dados.obrigatorias}
+          optativas={dados.optativas}
+          complementares={dados.complementares}
+          urlSigaa={dados.urlSigaa}
+          cor={dados.cor}
+        />
+      </div>
+
     </main>
   )
 }
